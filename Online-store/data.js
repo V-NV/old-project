@@ -73,7 +73,7 @@ const data = [
         "images": ["https://i.dummyjson.com/data/products/6/1.png", "https://i.dummyjson.com/data/products/6/2.jpg", "https://i.dummyjson.com/data/products/6/3.png", "https://i.dummyjson.com/data/products/6/4.jpg"]
     }, {
         "id": 7,
-        "title": "Samsung Galaxy Book",
+        "title": "Galaxy Book",
         "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
         "price": 1499,
         "discountPercentage": 4.15,
@@ -85,7 +85,7 @@ const data = [
         "images": ["https://i.dummyjson.com/data/products/7/1.jpg", "https://i.dummyjson.com/data/products/7/2.jpg", "https://i.dummyjson.com/data/products/7/3.jpg", "https://i.dummyjson.com/data/products/7/thumbnail.jpg"]
     }, {
         "id": 8,
-        "title": "Microsoft Surface Laptop 4",
+        "title": "Surface Laptop 4",
         "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
         "price": 1499,
         "discountPercentage": 10.23,
@@ -109,7 +109,7 @@ const data = [
         "images": ["https://i.dummyjson.com/data/products/9/1.jpg", "https://i.dummyjson.com/data/products/9/2.png", "https://i.dummyjson.com/data/products/9/3.png", "https://i.dummyjson.com/data/products/9/4.jpg", "https://i.dummyjson.com/data/products/9/thumbnail.jpg"]
     }, {
         "id": 10,
-        "title": "HP Pavilion 15-DK1056WM",
+        "title": "Pavilion 15-DK1056WM",
         "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
         "price": 1099,
         "discountPercentage": 6.18,
@@ -121,7 +121,67 @@ const data = [
         "images": ["https://i.dummyjson.com/data/products/10/1.jpg", "https://i.dummyjson.com/data/products/10/2.jpg", "https://i.dummyjson.com/data/products/10/3.jpg", "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"]
     }, {
         "id": 11,
-        "title": "Leather Straps Wristwatch",
+        "title": "Half sleeves T shirts",
+        "description": "Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands",
+        "price": 23,
+        "discountPercentage": 12.76,
+        "rating": 4.26,
+        "stock": 132,
+        "brand": "Vintage Apparel",
+        "category": "mens-shirts",
+        "thumbnail": "https://i.dummyjson.com/data/products/51/thumbnail.jpg",
+        "images": ["https://i.dummyjson.com/data/products/51/1.png", "https://i.dummyjson.com/data/products/51/2.jpg", "https://i.dummyjson.com/data/products/51/3.jpg", "https://i.dummyjson.com/data/products/51/thumbnail.jpg"]
+    }, {
+        "id": 12,
+        "title": "FREE FIRE T Shirt",
+        "description": "quality and professional print - It doesn't just look high quality, it is high quality.",
+        "price": 10,
+        "discountPercentage": 14.72,
+        "rating": 4.52,
+        "stock": 128,
+        "brand": "FREE FIRE",
+        "category": "mens-shirts",
+        "thumbnail": "https://i.dummyjson.com/data/products/52/thumbnail.jpg",
+        "images": ["https://i.dummyjson.com/data/products/52/1.png", "https://i.dummyjson.com/data/products/52/2.png", "https://i.dummyjson.com/data/products/52/3.jpg", "https://i.dummyjson.com/data/products/52/4.jpg", "https://i.dummyjson.com/data/products/52/thumbnail.jpg"]
+    }, {
+        "id": 13,
+        "title": "Printed high quality",
+        "description": "Brand: vintage Apparel ,Export quality",
+        "price": 35,
+        "discountPercentage": 7.54,
+        "rating": 4.89,
+        "stock": 6,
+        "brand": "Vintage Apparel",
+        "category": "mens-shirts",
+        "thumbnail": "https://i.dummyjson.com/data/products/53/thumbnail.jpg",
+        "images": ["https://i.dummyjson.com/data/products/53/1.webp", "https://i.dummyjson.com/data/products/53/2.jpg", "https://i.dummyjson.com/data/products/53/3.jpg", "https://i.dummyjson.com/data/products/53/4.jpg", "https://i.dummyjson.com/data/products/53/thumbnail.jpg"]
+    }, {
+        "id": 14,
+        "title": "Pubg Printed Graphic",
+        "description": "Product Description Features: 100% Ultra soft Polyester Jersey. Vibrant & colorful printing on front. Feels soft as cotton without ever cracking",
+        "price": 46,
+        "discountPercentage": 16.44,
+        "rating": 4.62,
+        "stock": 136,
+        "brand": "The Warehouse",
+        "category": "mens-shirts",
+        "thumbnail": "https://i.dummyjson.com/data/products/54/thumbnail.jpg",
+        "images": ["https://i.dummyjson.com/data/products/54/1.jpg", "https://i.dummyjson.com/data/products/54/2.jpg", "https://i.dummyjson.com/data/products/54/3.jpg", "https://i.dummyjson.com/data/products/54/4.jpg", "https://i.dummyjson.com/data/products/54/thumbnail.jpg"]
+    }, {
+        "id": 15,
+        "title": "Money Heist Printed",
+        "description": "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched",
+        "price": 66,
+        "discountPercentage": 15.97,
+        "rating": 4.9,
+        "stock": 122,
+        "brand": "The Warehouse",
+        "category": "mens-shirts",
+        "thumbnail": "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
+        "images": ["https://i.dummyjson.com/data/products/55/1.jpg", "https://i.dummyjson.com/data/products/55/2.webp", "https://i.dummyjson.com/data/products/55/3.jpg", "https://i.dummyjson.com/data/products/55/4.jpg", "https://i.dummyjson.com/data/products/55/thumbnail.jpg"]
+    }, {
+        "id": 16,
+        "title": "Leather Straps Wrist",
         "description": "Style:Sport ,Clasp:Buckles ,Water Resistance Depth:3Bar",
         "price": 120,
         "discountPercentage": 7.14,
@@ -132,8 +192,8 @@ const data = [
         "thumbnail": "https://i.dummyjson.com/data/products/61/thumbnail.jpg",
         "images": ["https://i.dummyjson.com/data/products/61/1.jpg", "https://i.dummyjson.com/data/products/61/2.png", "https://i.dummyjson.com/data/products/61/3.jpg"]
     }, {
-        "id": 12,
-        "title": "Waterproof Leather Brand Watch",
+        "id": 17,
+        "title": "Waterproof Leather",
         "description": "Watch Crown With Environmental IPS Bronze Electroplating; Display system of 12 hours",
         "price": 46,
         "discountPercentage": 3.15,
@@ -144,8 +204,8 @@ const data = [
         "thumbnail": "https://i.dummyjson.com/data/products/62/thumbnail.jpg",
         "images": ["https://i.dummyjson.com/data/products/62/1.jpg", "https://i.dummyjson.com/data/products/62/2.jpg"]
     }, {
-        "id": 13,
-        "title": "Royal Blue Premium Watch",
+        "id": 18,
+        "title": "Royal Blue Premium",
         "description": "Men Silver Chain Royal Blue Premium Watch Latest Analog Watch",
         "price": 50,
         "discountPercentage": 2.56,
@@ -156,8 +216,8 @@ const data = [
         "thumbnail": "https://i.dummyjson.com/data/products/63/thumbnail.webp",
         "images": ["https://i.dummyjson.com/data/products/63/1.jpg", "https://i.dummyjson.com/data/products/63/2.jpg", "https://i.dummyjson.com/data/products/63/3.png", "https://i.dummyjson.com/data/products/63/4.jpeg"]
     }, {
-        "id": 14,
-        "title": "Leather Strap Skeleton Watch",
+        "id": 19,
+        "title": "Leather Strap Skeleton",
         "description": "Leather Strap Skeleton Watch for Men - Stylish and Latest Design",
         "price": 46,
         "discountPercentage": 10.2,
@@ -168,8 +228,8 @@ const data = [
         "thumbnail": "https://i.dummyjson.com/data/products/64/thumbnail.jpg",
         "images": ["https://i.dummyjson.com/data/products/64/1.jpg", "https://i.dummyjson.com/data/products/64/2.webp", "https://i.dummyjson.com/data/products/64/3.jpg", "https://i.dummyjson.com/data/products/64/thumbnail.jpg"]
     }, {
-        "id": 15,
-        "title": "Stainless Steel Wrist Watch",
+        "id": 20,
+        "title": "Stainless Steel Wrist",
         "description": "Stylish Watch For Man (Luxury) Classy Men's Stainless Steel Wrist Watch - Box Packed",
         "price": 47,
         "discountPercentage": 17.79,
@@ -179,129 +239,11 @@ const data = [
         "category": "mens-watches",
         "thumbnail": "https://i.dummyjson.com/data/products/65/thumbnail.webp",
         "images": ["https://i.dummyjson.com/data/products/65/1.jpg", "https://i.dummyjson.com/data/products/65/2.webp", "https://i.dummyjson.com/data/products/65/3.jpg", "https://i.dummyjson.com/data/products/65/4.webp", "https://i.dummyjson.com/data/products/65/thumbnail.webp"]
-    }, {
-        "id": 16,
-        "title": "Bluetooth Aux",
-        "description": "Bluetooth Aux Bluetooth Car Aux Car Bluetooth Transmitter Aux Audio Receiver Handfree Car Bluetooth Music Receiver Universal 3.5mm Streaming A2DP Wireless Auto AUX Audio Adapter With Mic For Phone MP3",
-        "price": 25,
-        "discountPercentage": 10.56,
-        "rating": 4.57,
-        "stock": 22,
-        "brand": "Car Aux",
-        "category": "automotive",
-        "thumbnail": "https://i.dummyjson.com/data/products/86/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/86/1.jpg", "https://i.dummyjson.com/data/products/86/2.webp", "https://i.dummyjson.com/data/products/86/3.jpg", "https://i.dummyjson.com/data/products/86/4.jpg", "https://i.dummyjson.com/data/products/86/thumbnail.jpg"]
-    }, {
-        "id": 17,
-        "title": "t Temperature Controller Incubator Controller",
-        "description": "Both Heat and Cool Purpose, Temperature control range; -50 to +110, Temperature measurement accuracy; 0.1, Control accuracy; 0.1",
-        "price": 40,
-        "discountPercentage": 11.3,
-        "rating": 4.54,
-        "stock": 37,
-        "brand": "W1209 DC12V",
-        "category": "automotive",
-        "thumbnail": "https://i.dummyjson.com/data/products/87/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/87/1.jpg", "https://i.dummyjson.com/data/products/87/2.jpg", "https://i.dummyjson.com/data/products/87/3.jpg", "https://i.dummyjson.com/data/products/87/4.jpg", "https://i.dummyjson.com/data/products/87/thumbnail.jpg"]
-    }, {
-        "id": 18,
-        "title": "TC Reusable Silicone Magic Washing Gloves",
-        "description": "TC Reusable Silicone Magic Washing Gloves with Scrubber, Cleaning Brush Scrubber Gloves Heat Resistant Pair for Cleaning of Kitchen, Dishes, Vegetables and Fruits, Bathroom, Car Wash, Pet Care and Multipurpose",
-        "price": 29,
-        "discountPercentage": 3.19,
-        "rating": 4.98,
-        "stock": 42,
-        "brand": "TC Reusable",
-        "category": "automotive",
-        "thumbnail": "https://i.dummyjson.com/data/products/88/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/88/1.jpg", "https://i.dummyjson.com/data/products/88/2.jpg", "https://i.dummyjson.com/data/products/88/3.jpg", "https://i.dummyjson.com/data/products/88/4.webp", "https://i.dummyjson.com/data/products/88/thumbnail.jpg"]
-    }, {
-        "id": 19,
-        "title": "Qualcomm original Car Charger",
-        "description": "best Quality CHarger , Highly Recommended to all best Quality CHarger , Highly Recommended to all",
-        "price": 40,
-        "discountPercentage": 17.53,
-        "rating": 4.2,
-        "stock": 79,
-        "brand": "TC Reusable",
-        "category": "automotive",
-        "thumbnail": "https://i.dummyjson.com/data/products/89/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/89/1.jpg", "https://i.dummyjson.com/data/products/89/2.jpg", "https://i.dummyjson.com/data/products/89/3.jpg", "https://i.dummyjson.com/data/products/89/4.jpg", "https://i.dummyjson.com/data/products/89/thumbnail.jpg"]
-    }, {
-        "id": 20,
-        "title": "Cycle Bike Glow",
-        "description": "Universal fitment and easy to install no special wires, can be easily installed and removed. Fits most standard tyre air stem valves of road, mountain bicycles, motocycles and cars.Bright led will turn on w",
-        "price": 35,
-        "discountPercentage": 11.08,
-        "rating": 4.1,
-        "stock": 63,
-        "brand": "Neon LED Light",
-        "category": "automotive",
-        "thumbnail": "https://i.dummyjson.com/data/products/90/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/90/1.jpg", "https://i.dummyjson.com/data/products/90/2.jpg", "https://i.dummyjson.com/data/products/90/3.jpg", "https://i.dummyjson.com/data/products/90/4.jpg", "https://i.dummyjson.com/data/products/90/thumbnail.jpg"]
-    }, {
-        "id": 21,
-        "title": "Black Motorbike",
-        "description": "Engine Type:Wet sump, Single Cylinder, Four Stroke, Two Valves, Air Cooled with SOHC (Single Over Head Cam) Chain Drive Bore & Stroke:47.0 x 49.5 MM",
-        "price": 569,
-        "discountPercentage": 13.63,
-        "rating": 4.04,
-        "stock": 115,
-        "brand": "METRO 70cc Motorcycle - MR70",
-        "category": "motorcycle",
-        "thumbnail": "https://i.dummyjson.com/data/products/91/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/91/1.jpg", "https://i.dummyjson.com/data/products/91/2.jpg", "https://i.dummyjson.com/data/products/91/3.jpg", "https://i.dummyjson.com/data/products/91/4.jpg", "https://i.dummyjson.com/data/products/91/thumbnail.jpg"]
-    }, {
-        "id": 22,
-        "title": "HOT SALE IN EUROPE electric racing motorcycle",
-        "description": "HOT SALE IN EUROPE electric racing motorcycle electric motorcycle for sale adult electric motorcycles",
-        "price": 920,
-        "discountPercentage": 14.4,
-        "rating": 4.19,
-        "stock": 22,
-        "brand": "BRAVE BULL",
-        "category": "motorcycle",
-        "thumbnail": "https://i.dummyjson.com/data/products/92/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/92/1.jpg", "https://i.dummyjson.com/data/products/92/2.jpg", "https://i.dummyjson.com/data/products/92/3.jpg", "https://i.dummyjson.com/data/products/92/4.jpg"]
-    }, {
-        "id": 23,
-        "title": "Automatic Motor Gas Motorcycles",
-        "description": "150cc 4-Stroke Motorcycle Automatic Motor Gas Motorcycles Scooter motorcycles 150cc scooter",
-        "price": 1050,
-        "discountPercentage": 3.34,
-        "rating": 4.84,
-        "stock": 127,
-        "brand": "shock absorber",
-        "category": "motorcycle",
-        "thumbnail": "https://i.dummyjson.com/data/products/93/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/93/1.jpg", "https://i.dummyjson.com/data/products/93/2.jpg", "https://i.dummyjson.com/data/products/93/3.jpg", "https://i.dummyjson.com/data/products/93/4.jpg", "https://i.dummyjson.com/data/products/93/thumbnail.jpg"]
-    }, {
-        "id": 24,
-        "title": "new arrivals Fashion motocross goggles",
-        "description": "new arrivals Fashion motocross goggles motorcycle motocross racing motorcycle",
-        "price": 900,
-        "discountPercentage": 3.85,
-        "rating": 4.06,
-        "stock": 109,
-        "brand": "JIEPOLLY",
-        "category": "motorcycle",
-        "thumbnail": "https://i.dummyjson.com/data/products/94/thumbnail.webp",
-        "images": ["https://i.dummyjson.com/data/products/94/1.webp", "https://i.dummyjson.com/data/products/94/2.jpg", "https://i.dummyjson.com/data/products/94/3.jpg", "https://i.dummyjson.com/data/products/94/thumbnail.webp"]
-    }, {
-        "id": 25,
-        "title": "Wholesale cargo lashing Belt",
-        "description": "Wholesale cargo lashing Belt Tie Down end Ratchet strap customized strap 25mm motorcycle 1500kgs with rubber handle",
-        "price": 930,
-        "discountPercentage": 17.67,
-        "rating": 4.21,
-        "stock": 144,
-        "brand": "Xiangle",
-        "category": "motorcycle",
-        "thumbnail": "https://i.dummyjson.com/data/products/95/thumbnail.jpg",
-        "images": ["https://i.dummyjson.com/data/products/95/1.jpg", "https://i.dummyjson.com/data/products/95/2.jpg", "https://i.dummyjson.com/data/products/95/3.jpg", "https://i.dummyjson.com/data/products/95/4.jpg", "https://i.dummyjson.com/data/products/95/thumbnail.jpg"]
     }
-    ];
-    /*"total": 100,
-    "skip": 0,
-    "limit": 100*/
+];
+/*
+"total": 25,
+"skip": 0,
+"limit": 25
+}*/
 export default data;
