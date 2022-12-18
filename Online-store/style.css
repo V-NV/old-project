@@ -1,3 +1,4 @@
+body::-webkit-scrollbar { width: 0; } 
 body{
     display: flex;
     flex-direction: column;
@@ -12,7 +13,7 @@ header{
     height: 100px;
     border:solid 2px green;
     margin: 5px;
-}
+} 
 .cont-header{
     display: flex;
     flex-direction: row;
@@ -151,6 +152,7 @@ select {
 .right{
     width: 75%;
     min-height: 700px;
+    height: 920px;
     border: solid 2px green;
     display: flex;
     flex-direction: column;
@@ -169,19 +171,23 @@ select {
 }
 .content{
 width: 100%;
-height: 600px;
+height: 832px;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
 gap: 18px;
 overflow: auto;
+scroll-behavior: smooth;
 }
 .item{
     display: flex;
     flex-direction: column;
-    height: 500px;
+    justify-content: flex-start;
+    height: 520px;
+    min-width: 240px;
     width:31%;
+    max-width: 300px;
     border:solid 1px violet;
     border-radius:10px;
     background-color: #f7f7ea;
@@ -198,6 +204,13 @@ overflow: auto;
     margin-left: 10px;
     font-size: 20px;
     color: #1b7b64;
+    margin-bottom: 15px;
+    line-height: 18px;
+}
+.item-price{
+    margin-left: 10px;
+    font-size: 20px;
+    color: #7b1b38;
     margin-bottom: 15px;
     line-height: 22px;
 }
@@ -226,6 +239,9 @@ overflow: auto;
     color:#e2cb58;
 }
 .off{
+    display: none; 
+}
+.net{
     display: none;
 }
 /*--------------------list-style--------------------*/
@@ -255,9 +271,20 @@ margin-top: 25px;
 .item-image-list{
 width: 300px;
 height: 235px;
-margin-left: 55px;
+margin-left: 90px;
 }
-
+/************************scroll************************/
+::-webkit-scrollbar-track {
+	background-color: rgb(221, 125, 221); /*Цвет ползунка*/
+}   
+::-webkit-scrollbar-thumb { 
+	border-radius: 5px; /*Закругление ползунка*/
+	background-color: #2daed1; /*Цвет ползунка*/
+} 
+::-webkit-scrollbar { 
+	width: 8px;  /*Толщина скролла*/
+}
+/************************scroll************************/
 /*----------------------------------------------------*/
 /*----------------------------------------------------*/
 
