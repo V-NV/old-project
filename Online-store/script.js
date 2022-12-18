@@ -2,9 +2,9 @@ import data from './data.js';
 
 const arrData = data;
 
-createfuck(arrData)
+createfunc(arrData)
 
-function createfuck(Data) {
+function createfunc(Data) {
     const view = document.querySelector('.content');
     if(view) {
       view.innerHTML = '';
