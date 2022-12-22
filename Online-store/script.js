@@ -1,6 +1,8 @@
 import data from './data.js';
 const view = document.querySelector('.content');
+const SortBy = document.querySelector('#sort-select');//сортировка
 const arrData = data;
+const arrFirst = data.slice();
 let arrTemp = [];//для первого вызванного фильтра
 let arrCurrient = arrData;//текущее состояние массива
 let isTable = true;//текущее отображение страницы
@@ -10,18 +12,23 @@ let isCheckOn = false; // состояние чекбокса
 
 createTable(arrData)//запуск при первой загрузке со всеми товарами 
 
-
+console.log(arrData[0].title)
 /*----------------------отрисовка таблицой---------------------------- */
 
 function createTable(Data) {
   arrTemp = [];
   arrCurrient = Data;//передача текущего состояния
-   let data = arrCurrient;
+  Sort2(); 
+  let data = arrCurrient;
+  let IdVerific = document.getElementsByClassName('item-image')
+  
     if(view) {
       view.innerHTML = '';
-      for (let i = 0; i < Data.length; i += 1) {
+      
+      for (let i = 0; i < arrCurrient.length; i += 1) {
+        
         view.innerHTML += `
-          <div class="item" id="${data[i].id}">
+          <div class="item" id="item${data[i].id}">
             <h2 class="item-name">${data[i].title}</h2>
             <div class="text-cont">
             <li class="item-discr">Брэнд: ${data[i].brand}</li>
@@ -30,28 +37,42 @@ function createTable(Data) {
             <li class="item-discr">Количество: ${data[i].stock}</li>
             <li class="item-price">Цена: $ ${data[i].price}</li>
             </div>
-            <img class="item-image" src="${data[i].images[0]}">
+            <img class="item-image" id="${data[i].id - 1}" alt="${data[i].title}" src="${data[i].thumbnail}">
             <div class="item-button-cont">
-            <button class="btn-item" id="btn-add">Добавить в корзину</button>
-            <button class="btn-item" id="btn-del">Удалить из корзины</button>
+            <button class="btn-item" id="btn-add${data[i].id}">Добавить в корзину</button>
+            <button class="btn-item" id="btn-del${data[i].id}">Удалить из корзины</button>
             </div>
           </div>
         `
+            }
+      /*for(let j = 0;j<arrFirst.length;j+=1){ 
+        for (let i = 0; i < data.length; i += 1) {
+          if(arrFirst[j].title == data[i].title){
+            data[i].id = arrFirst[j].id
+        }}
       }
-        const a = document.querySelector('.search-result')
-      a.textContent = Data.length;
-      noItems();
-     }
+        console.log(arrFirst[0].id,'arrFirst')
+      console.log(arrCurrient[0].id,'arrCurrient')
+      */
+    }
+    isList = false;
+    isTable = true;
+    
+    const a = document.querySelector('.search-result');
+    a.textContent = Data.length;
+    noItems();
+     PopupOn();
+  
   }
-
   /*----------------------отрисовка таблицой-конец--------------------------- */
-
+ 
 
   /*-------------------------отрисовка списком------------------------------- */
 
   function createList(Data) {
     arrTemp = [];
     arrCurrient = Data;//передача текущего состояния
+    Sort2();
      let data = Data;
       if(view) {
         view.innerHTML = '';
@@ -65,11 +86,11 @@ function createTable(Data) {
               <li class="item-discr">Количество: ${data[i].stock}</li>
               <li class="item-price">Цена: $ ${data[i].price}</li>
               </div>
-              <img class="item-image-list" src="${data[i].images[0]}">
+              <img class="item-image-list" id="${data[i].id-1}" alt="${data[i].title}" src="${data[i].thumbnail}">
               <div class="item-button-cont-list">
               <h2 class="item-name">${data[i].title}</h2>
-              <button class="btn-item" id="btn-add">Добавить в корзину</button>
-              <button class="btn-item" id="btn-del">Удалить из корзины</button>
+              <button class="btn-item" id="btn-add${data[i].id}">Добавить в корзину</button>
+              <button class="btn-item" id="btn-del${data[i].id}">Удалить из корзины</button>
               </div>
             </div>
           `
@@ -79,7 +100,8 @@ function createTable(Data) {
         
         const a = document.querySelector('.search-result');
         a.textContent = Data.length;
-        noItems(); 
+        noItems();
+         PopupOn();
        }
     }
 
@@ -167,10 +189,12 @@ b.classList.add('off')
 
 /*--------------------------------Сортировка---------------------------------*/
 
-const SortBy = document.querySelector('#sort-select');
+//const SortBy = document.querySelector('#sort-select'); переместил вверх
 
-SortBy.addEventListener('change', () => {
+SortBy.addEventListener('change', Sort);
  
+  function Sort() {
+    console.log(SortBy.value,'текущая выбранная сортировка');
 if ((SortBy).value == 'a-z') {
   arrCurrient.sort(function (a, b) {
     if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
@@ -189,11 +213,31 @@ if ((SortBy).value == 'a-z') {
   arrCurrient.sort((a, b) => b.price*1 - a.price*1);
 }
 isTable?createTable(arrCurrient):createList(arrCurrient);
+}
+function Sort2() {//тоже что первая но без замыкания
+  console.log(SortBy.value,'текущая выбранная сортировка');
+if ((SortBy).value == 'a-z') {
+arrCurrient.sort(function (a, b) {
+  if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+  if (a.title.toLowerCase() > b.title.toLowerCase()) return 1;
+  return 0;
 });
+} else if ((SortBy).value == 'z-a') {
+arrCurrient.sort(function (a, b) {
+  if (b.title.toLowerCase() < a.title.toLowerCase()) return -1;
+  if (b.title.toLowerCase() > a.title.toLowerCase()) return 1;
+  return 0;
+});
+} else if ((SortBy).value == 'from-min') {
+arrCurrient.sort((a, b) => a.price*1 - b.price*1);
+} else if ((SortBy).value == 'from-max') {
+arrCurrient.sort((a, b) => b.price*1 - a.price*1);
+}
+}
 
 /*--------------------------------Сортировка---------------------------------*/
 
-/*---------------------------------Чекбоксы----------------------------------*/
+/*---------------------------- -Чекбоксы-верхние-----------------------------*/
 const BoxCategory = document.getElementById('category');//весь контейнер категории
 const CheckSmart = document.getElementById('smart');
 const CheckNout = document.getElementById('nout');
@@ -239,4 +283,116 @@ BoxCategory.addEventListener('click',() => {
       }
   });
 
+/*---------------------------------Чекбоксы-END---------------------------------*/
+
+/*--------------------------------Карточки попап--------------------------------*/
+
+
+function PopupOn(){
+  
+  const itemPopup = document.getElementsByClassName('item-image');
+  const itemPopupList = document.getElementsByClassName('item-image-list');
+  
+  const Popup = document.querySelector('.popup');
+  Popup.innerHTML = '';
+  let elements = [];
+  if(isTable){elements = itemPopup}
+  if(isList){elements = itemPopupList}
+
+  for(let el of elements){
+  el.addEventListener('click', function(event) {
+  
+  let elem = event.target
+  
+  //let rrrr = elem.className//получает класс
+  let ID = elem.id;
+  console.log(elem.id,'id кликнутого')
+  //let name = arrCurrient[ID].title
+  
+  //console.log(name)
+  //console.log(+elem.id.toString()[3],"элемент id")
+
+  //console.log(rrrr,"класс")
+  //console.log(elem.id,"knop")
+  //elem.classList.add('off') //выключает
+  
+  view.classList.add('off')
+  Popup.classList.remove('off')
+// console.log(ID,'id')
+    Popup.innerHTML += `
+    <div class="item-pop" id="${ID}}">
+    
+       <div class="exit">х</div>
+      
+        <h2 class="item-name-pop">${arrFirst[ID].title}</h2>
+       <div class="cont-box-pop">
+        <div class="left-arrow" id="left-arrow"><</div>
+        <div>
+        <img class="item-image-pop" id="i${arrFirst[ID].id}" alt="${arrFirst[ID].title}" src="${arrFirst[ID].thumbnail}">
+      </div>
+        <div class="right-arrow" id="right-arrow">></div>  
+        <div class="text-cont-pop">
+        <li class="item-discr">Брэнд: ${arrFirst[ID].brand}</li>
+        <li class="item-discr">Категория: ${arrFirst[ID].category}</li>
+        <li class="item-discr">Рейтинг: ${arrFirst[ID].rating}</li>
+        <li class="item-discr">Количество: ${arrFirst[ID].stock}</li>
+        <li class="item-price">Цена: $ ${arrFirst[ID].price}</li>
+      </div>
+        
+       </div>
+          <div class="opisanie">Описание: ${arrFirst[ID].description}</div>
+        <div class="item-button-cont-pop">
+          <button class="btn-item" id="btn-add${arrFirst[ID].id}">Добавить в корзину</button>
+          <button class="btn-item" id="btn-del${arrFirst[ID].id}">Удалить из корзины</button>
+        </div>
+      </div>
+    `
+    const Mov = document.querySelector('.item-image-pop');
+    const LeftArrow = document.getElementById('left-arrow');
+    const RightArrow = document.getElementById('right-arrow');
+    const SliderLeft = document.getElementById(ID);
+    console.log(Mov.src)
+     let arrImg = []
+     arrImg = arrFirst[ID].images.push(arrFirst[ID].thumbnail);
+    
+    console.log(arrFirst[ID].images[2])
+    
+
+    let count = 0;
+    let lena = arrFirst[ID].images.length
+
+    console.log(lena,'lena',typeof lena)
+    LeftArrow.addEventListener('click', function(){
+     
+      console.log(arrFirst[ID].images[count],'дичь');
+      
+      if(count>=lena-1){count = 0}
+      console.log(count)
+      Mov.src = arrFirst[ID].images[count]
+      count += 1;
+    })
+    RightArrow.addEventListener('click', function(){
+      
+      console.log(arrFirst[ID].images[count],'дичь')
+      console.log(count)
+
+
+      
+      if(count<=0){count = lena-1}
+      Mov.src = arrFirst[ID].images[count]
+      count = count - 1;
+
+
+    })
+
+    const Exit = document.querySelector('.exit');
+    Exit.addEventListener('click', function() {
+      view.classList.remove('off');
+      Popup.classList.add('off');
+      Popup.innerHTML = '';
+    });
+  })
+  }
+}
+  
 
