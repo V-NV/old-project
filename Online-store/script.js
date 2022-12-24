@@ -287,14 +287,16 @@ BoxCategory.addEventListener('click',() => {
 
 /*--------------------------------Карточки попап--------------------------------*/
 
-
 function PopupOn(){
   
   const itemPopup = document.getElementsByClassName('item-image');
   const itemPopupList = document.getElementsByClassName('item-image-list');
-  
+  const Left = document.querySelector('.left');
+  const Right = document.querySelector('.right');
+  const Footer = document.querySelector('.footer');
   const Popup = document.querySelector('.popup');
-  Popup.innerHTML = '';
+
+  
   let elements = [];
   if(isTable){elements = itemPopup}
   if(isList){elements = itemPopupList}
@@ -303,43 +305,34 @@ function PopupOn(){
   el.addEventListener('click', function(event) {
   
   let elem = event.target
-  
-  //let rrrr = elem.className//получает класс
   let ID = elem.id;
-  console.log(elem.id,'id кликнутого')
-  //let name = arrCurrient[ID].title
-  
-  //console.log(name)
-  //console.log(+elem.id.toString()[3],"элемент id")
-
-  //console.log(rrrr,"класс")
-  //console.log(elem.id,"knop")
-  //elem.classList.add('off') //выключает
-  
+ 
   view.classList.add('off')
+  Left.classList.add('off')
+  Right.classList.add('off')
+  Footer.classList.add('foot-down')
+
   Popup.classList.remove('off')
-// console.log(ID,'id')
+
+    Popup.innerHTML = '';
     Popup.innerHTML += `
     <div class="item-pop" id="${ID}}">
-    
-       <div class="exit">х</div>
-      
-        <h2 class="item-name-pop">${arrFirst[ID].title}</h2>
+         <div class="exit">х</div>
+         <h2 class="item-name-pop">${arrFirst[ID].title}</h2>
        <div class="cont-box-pop">
-        <div class="left-arrow" id="left-arrow"><</div>
-        <div>
-        <img class="item-image-pop" id="i${arrFirst[ID].id}" alt="${arrFirst[ID].title}" src="${arrFirst[ID].thumbnail}">
-      </div>
-        <div class="right-arrow" id="right-arrow">></div>  
-        <div class="text-cont-pop">
+        <div class="img-box-pop">
+        <img class="item-image-pop" id="i${arrFirst[ID].images[0]}" alt="${arrFirst[ID].title}" src="${arrFirst[ID].thumbnail}">
+       </div>
+       <div class="text-cont-pop">
         <li class="item-discr">Брэнд: ${arrFirst[ID].brand}</li>
         <li class="item-discr">Категория: ${arrFirst[ID].category}</li>
         <li class="item-discr">Рейтинг: ${arrFirst[ID].rating}</li>
+        <li class="item-discr">Скидка: ${arrFirst[ID].discountPercentage} %</li>
         <li class="item-discr">Количество: ${arrFirst[ID].stock}</li>
         <li class="item-price">Цена: $ ${arrFirst[ID].price}</li>
+       <div class="arrow" id="left-arrow">&#8644</div>
       </div>
-        
-       </div>
+      </div>
           <div class="opisanie">Описание: ${arrFirst[ID].description}</div>
         <div class="item-button-cont-pop">
           <button class="btn-item" id="btn-add${arrFirst[ID].id}">Добавить в корзину</button>
@@ -348,50 +341,61 @@ function PopupOn(){
       </div>
     `
     const Mov = document.querySelector('.item-image-pop');
-    const LeftArrow = document.getElementById('left-arrow');
-    const RightArrow = document.getElementById('right-arrow');
-    const SliderLeft = document.getElementById(ID);
-    console.log(Mov.src)
-     let arrImg = []
-     arrImg = arrFirst[ID].images.push(arrFirst[ID].thumbnail);
-    
-    console.log(arrFirst[ID].images[2])
-    
-
+    const btnChange = document.getElementById('left-arrow');
+       
+    let arrImg = arrFirst[ID].images;
+      
     let count = 0;
-    let lena = arrFirst[ID].images.length
+   
+    btnChange.addEventListener('click', function(){
+   
+      if(count === 0 ){
+        Mov.src = arrImg[count];
+        count += 1;
+      }
+      else if(count > 0 && count < arrImg.length){
+        Mov.src = arrImg[count];
+        count += 1;
+       }
+       else if(count > arrImg.length){
+        count = 0
+        Mov.src = arrImg[count];
+        count += 1;
+       }
+       else if(count < 0){
+        count = 0;
+        count = arrImg.length-1
+        Mov.src = arrImg[count];
+        count += 1;
+       }
+       else if(count == arrImg.length){
+        count = 0;
+        Mov.src = arrImg[count];
+        count += 1;
+       }
 
-    console.log(lena,'lena',typeof lena)
-    LeftArrow.addEventListener('click', function(){
-     
-      console.log(arrFirst[ID].images[count],'дичь');
-      
-      if(count>=lena-1){count = 0}
-      console.log(count)
-      Mov.src = arrFirst[ID].images[count]
-      count += 1;
     })
-    RightArrow.addEventListener('click', function(){
-      
-      console.log(arrFirst[ID].images[count],'дичь')
-      console.log(count)
-
-
-      
-      if(count<=0){count = lena-1}
-      Mov.src = arrFirst[ID].images[count]
-      count = count - 1;
-
-
-    })
-
+   
+    const ZoomImg = document.querySelector('.item-image-pop');
+    ZoomImg.addEventListener('mouseover', function(){
+        ZoomImg.classList.add('item-image-pop-on');
+     })
+    ZoomImg.addEventListener('mouseout', function(){
+         ZoomImg.classList.remove('item-image-pop-on');
+     })
+  
     const Exit = document.querySelector('.exit');
     Exit.addEventListener('click', function() {
+      
+      Left.classList.remove('off')
+      Right.classList.remove('off')
+      Footer.classList.remove('foot-down')
       view.classList.remove('off');
       Popup.classList.add('off');
       Popup.innerHTML = '';
-    });
+   
   })
+})
   }
 }
   
