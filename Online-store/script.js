@@ -397,6 +397,7 @@ function PopupOn(){
     ZoomImg.addEventListener('mouseout', function(){
          ZoomImg.classList.remove('item-image-pop-on');
      })
+  AddItems();
   
     const Exit = document.querySelector('.exit');
     Exit.addEventListener('click', function() {
