@@ -610,7 +610,7 @@ function checkCard (cardnumber) {
   
 }
 function checkDate(date) {
-    if (mmyy.test(date.value) && date.value.toString().length == 4) {
+    if (mmyy.test(date.value) && +date.value.toString().length === 4) {
         let dm = date.value.toString('').split('');
         date.value = dm[0]+dm[1]+'/'+ +dm[2]+dm[3]
         Validate(date, "success");
