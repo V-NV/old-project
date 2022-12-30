@@ -469,6 +469,7 @@ function OpenCart(){
   const Left = document.querySelector('.left');
   const Right = document.querySelector('.right');
   const Footer = document.querySelector('.footer');
+  const popup = document.querySelector('.popup')
    
    korz.textContent = arrCart.length;// отображение товаров в корзине
 
@@ -478,6 +479,8 @@ function OpenCart(){
   Footer.classList.add('foot-down');
   CartPage.classList.remove('off');
   PayOn.classList.add('off');
+  popup.classList.add('off')
+
     CartPage.innerHTML = '';
     CartPage.innerHTML += `
     <div class="left-cart">
