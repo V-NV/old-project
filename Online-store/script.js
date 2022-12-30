@@ -1,4 +1,6 @@
 import data from './data.js';
+window.addEventListener('beforeunload', setLocalStorage);
+window.addEventListener('load', getLocalStorage);
 const view = document.querySelector('.content');
 const SortBy = document.querySelector('#sort-select');//сортировка
 const CartIcon = document.querySelector('.cart');// при клике на корзину
@@ -8,6 +10,8 @@ const korz = document.querySelector('.cartscore');// число товаров �
 const summ = document.querySelector('.header-summ');//сумма в корзине
 const Reset = document.querySelector('.reset-filter')//кнопка reset
 const Bread = document.querySelector('.item-bread-link');//хлебные возврат
+const Table = document.getElementById("table");
+const List = document.getElementById("list");
 const arrData = data;
 const arrFirst = data.slice();
 let arrCart = [];//массив карзины
@@ -19,9 +23,18 @@ let arrSmartCheckbox = [];//массив smartfones
 let isCheckOn = false; // состояние чекбокса
 let suma = 0;//сумма товаров в корзине для header
 
-createTable(arrData)//запуск при первой загрузке со всеми товарами 
+function LS(){
 
+if(localStorage.getItem('List') === 'true'){
+createList(arrData)//запуск при первой загрузке со всеми товарами 
+  }
+else{
+createTable(arrData)//запуск при первой загрузке со всеми товарами 
+  }
+}
+LS();
 console.log(arrData[0].title)
+console.log(isTable,'isTable')
 /*----------------------отрисовка таблицой---------------------------- */
 
 function createTable(Data) {
@@ -66,7 +79,10 @@ function createTable(Data) {
     }
     isList = false;
     isTable = true;
+    Table.className = 'now';
     
+    //localStorage.setItem('List', JSON.stringify(false))
+    //localStorage.setItem('Table', JSON.stringify(true))
     const a = document.querySelector('.search-result');
     a.textContent = Data.length;
     noItems();
@@ -107,7 +123,9 @@ function createTable(Data) {
         }
         isList = true;
         isTable = false;
-        
+        List.className = 'now';
+        //localStorage.setItem('List', JSON.stringify(true))
+        //localStorage.setItem('Table', JSON.stringify(false))
         const a = document.querySelector('.search-result');
         a.textContent = Data.length;
         noItems();
@@ -121,9 +139,9 @@ function createTable(Data) {
 /*----------------------------------------------------------------------------*/
 
 /*------------------------------swich-table-list------------------------------*/
-const Table = document.getElementById("table");
-const List = document.getElementById("list");
-Table.className = 'now';
+//const Table = document.getElementById("table");
+//const List = document.getElementById("list");
+//Table.className = 'now';
 
 List.addEventListener('click', function(){
     if(!isList && arrCurrient.length < 1) {
@@ -132,6 +150,8 @@ List.addEventListener('click', function(){
       List.className = 'now';
       isList = true;
       isTable = false;
+      localStorage.setItem('List', JSON.stringify(true))
+      localStorage.setItem('Table', JSON.stringify(false))
     }
     if(!isList && arrCurrient.length > 0) {
       createList(arrCurrient)
@@ -139,6 +159,8 @@ List.addEventListener('click', function(){
       List.className = 'now';
       isList = true;
       isTable = false;
+      localStorage.setItem('List', JSON.stringify(true))
+      localStorage.setItem('Table', JSON.stringify(false))
     }
 });
 
@@ -150,6 +172,8 @@ Table.addEventListener('click', function(){
     List.className = '';
     isList = false;
     isTable = true;
+    localStorage.setItem('List', JSON.stringify(false))
+    localStorage.setItem('Table', JSON.stringify(true))
   }
   if(!isTable && arrCurrient.length > 0) {
     createTable(arrCurrient)
@@ -157,6 +181,8 @@ Table.addEventListener('click', function(){
     List.className = '';
     isList = false;
     isTable = true;
+    localStorage.setItem('List', JSON.stringify(false))
+    localStorage.setItem('Table', JSON.stringify(true))
   }
 });
 
@@ -947,38 +973,40 @@ Reset.addEventListener('click', function(){
 /*--------------set-----local----storage----------- */
 
 function setLocalStorage() {
-    
-    
+  
     let a = isTable //текущее значение
     localStorage.setItem('Table', JSON.stringify(a));
+    
+   
     let b = isList
     localStorage.setItem('List', JSON.stringify(b));
-    console.log(isTable,'set')
-    console.log(isList,'set')
+   // console.log(isTable,'set isTable')
+   // console.log(isList,'set isList')
 }
 
 /*-------------get--local--storage----------- */
 function getLocalStorage() {
     
-  let p = localStorage.getItem('List');
+  let p = localStorage.getItem('Table');
   if(p){
-  isList = JSON.parse(p)
-  console.log(isTable,'get')
+  isTable = JSON.parse(p)
+ // console.log(isTable,'get isTable')
+  }
+ else{
+  isTable = JSON.parse(p)
+ // console.log(isTable,'get isTable')
+  }
+
+  let l = localStorage.getItem('List');
+  if(l){
+  isList = JSON.parse(l)
+ // console.log(isList,'get isList')
   }
   else{
-    isList = JSON.parse(p)
-    console.log(isTable,'get')
-  }
-    
-       
-         //console.log(isLang,'get')
-        
+  isList = JSON.parse(l)
+ // console.log(isList,'get isList')
+  } 
     }
-      
-window.addEventListener('beforeunload', setLocalStorage);
-window.addEventListener('load', getLocalStorage);
-
-   
    /*-------------------end--local--storage------ */
 
 /************************localStorag******************************/
